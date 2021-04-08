@@ -9,6 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align: center;
+  
 }
 .Information-sidebar {
   margin: 10px 0 0 0;

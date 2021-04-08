@@ -1,3 +1,7 @@
+body{
+  padding-left: 150px;
+  padding-right: 150px;
+}
 .Checkout {
   grid-template-columns: 3fr 1fr;
   grid-gap: 2rem;
@@ -33,7 +37,7 @@
 }
 
 .Checkout-sidebar button {
-  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+    box-shadow: inset 0px 1px 0px 0px #bee2f9;
     background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
     background-color: #63b8ee;
     border-radius: 6px;
