@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import '../styles/components/Checkout.css'
+import AppContext from '../context/AppContext';
 
 
 
 const Checkout = () => {
+
+    const {state, removeFromCart} = useContext(AppContext);
+    const { cart }= state;
+
+    const handleRemove = product => () => {
+        removeFromCart(product);
+    }
+
+    const handleSumaTotal = () => {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+        sum = cart.reduce(reducer, 0);
+        return sum;
+    }
+
     return (
       <div className="Checkout">
           <div className="Checkout-content">

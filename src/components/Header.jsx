@@ -8,6 +8,7 @@ const Header = () => {
      
     const { cart } = state;
 
+
     return (
         <div className="Header">
             <h1 className="Header-title">
