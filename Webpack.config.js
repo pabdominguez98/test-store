@@ -6,8 +6,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/boundle.[name].js',
-    publicPath: '/',
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -17,10 +17,12 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
-        test: /\.(html)$/,
+        test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
@@ -28,22 +30,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css)$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-        ],
-      },
-      {
-        test: /\.(scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-          'sass-loader',
         ],
       },
     ],
@@ -53,7 +45,6 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html',
     }),
-
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
     }),
