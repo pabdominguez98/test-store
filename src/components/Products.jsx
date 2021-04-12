@@ -9,7 +9,11 @@ const Products = () => {
 
 
     const handleAddToCart = product => () => {
-        addToCart(product)
+        addToCart(product);
+    }
+
+    const handleGrego = () => {
+        alert('Gregorio se la come doblada todos los dias');
     }
 
     return (
@@ -17,7 +21,7 @@ const Products = () => {
             <div className="Products-items">
                 {
                     products.map(product => (
-                        <Product key={product.id} product={product} handleAddToCart={handleAddToCart} />
+                        <Product key={product.id} product={product} handleAddToCart={handleAddToCart} handleGrego={handleGrego} />
                     ))
                 }
             </div>

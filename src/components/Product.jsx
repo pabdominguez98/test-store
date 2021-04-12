@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Product = ({ product, handleAddToCart }) => {
+const Product = ({ product, handleAddToCart, handleGrego }) => {
+
     return (
         <div className="Products-item">
             <img src={product.image} alt={product.title} />
@@ -11,7 +12,12 @@ const Product = ({ product, handleAddToCart }) => {
                 </h2>
                 <p>{product.description}</p>
             </div>
-            <button type="button" onClick={handleAddToCart(product)}>Comprar</button>
+            { product.title != 'Hoodie' ? (
+               <button onClick={handleAddToCart(product)}>Comprar</button>
+            ) : (
+                <button onClick={handleGrego}>Comprar</button>
+            )}
+        
         </div>
     );
 }
