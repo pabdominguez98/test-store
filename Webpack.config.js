@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'boundle.js',
+    filename: 'js/boundle.[name].js',
     publicPath: '/',
   },
   resolve: {
@@ -17,9 +17,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: 'babel-loader'
       },
       {
         test: /\.(html)$/,
