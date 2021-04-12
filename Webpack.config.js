@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
+    filename: 'boundle.js',
     publicPath: '/',
   },
   resolve: {
@@ -46,26 +46,6 @@ module.exports = {
           },
           'css-loader',
           'sass-loader',
-        ],
-      },
-      {
-        test: /\.(less)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-          'less-loader',
-        ],
-      },
-      {
-        test: /\.(styl)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-          'stylus-loader',
         ],
       },
     ],
