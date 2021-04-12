@@ -33,7 +33,7 @@ const App = () => {
           </Layout>
         </BrowserRouter>
       </AppContext.Provider>
-    );
+    )
 }
 
 
